@@ -6,7 +6,7 @@ Created on Fri Feb 17 13:11:13 2023
 """
 
 ### JOIN NETCDF FILES FOR THE REGIONAL CLIMATIC MODELS
-
+import netCDF4
 import xarray
 import os
 
@@ -31,7 +31,7 @@ rcm4='pr_SAM-44_ICHEC-EC-EARTH_rcp85_r12i1p1_SMHI-RCA4_v3_day_*.nc'
 
 
 lt=[rcm,rcm1,rcm2,rcm3,rcm4]
-listRCM=[rcm[:-5],rcm1[:-5],rcm2[:-5],rcm3[:-5],rcm4[:-5],rcm5[:-5]]
+listRCM=[rcm[:-5],rcm1[:-5],rcm2[:-5],rcm3[:-5],rcm4[:-5]]
 
 ##Function to combine files
 
