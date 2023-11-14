@@ -55,7 +55,7 @@ lon = data.variables['lon'][:]
 
 ### Storing the lat and lon of station into variables 
 os.chdir(pathcsv)
-Coord_stations=pd.read_csv(' 01_Rotated_Estaciones_Coords.csv')
+Coord_stations=pd.read_csv(' 01_Rotated_Estaciones_Coords.csv')  ##Change the name of the coordinate file
 cds=Coord_stations
 
 ##Rotated coordinates
@@ -65,7 +65,7 @@ lon_station =  172.99
 ##Variables plot ncfile with stations coordinates
 da=data['pr']
 pt=data.isel(time=1000)
-pcp=data.pr.isel(time=9150)
+pcp=data.pr.isel(time=9150) ## change according the day you want to evaluate, according to the lenght spell of data of the model
 pcp.plot()
 plt.scatter(cds['rlon'],cds['rlat'],color='yellow',s=5, label='Estaciones Hidrologicas')
 #plt.xlim([168,169]) #change according to coordinates limit
