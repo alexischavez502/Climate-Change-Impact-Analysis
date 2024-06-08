@@ -63,8 +63,6 @@ lat_station = -0.76
 lon_station =  172.99
 
 ##Variables plot ncfile with stations coordinates
-da=data['pr']
-pt=data.isel(time=1000)
 pcp=data.pr.isel(time=9150) ## change according the day you want to evaluate, according to the lenght spell of data of the model
 pcp.plot()
 plt.scatter(cds['rlon'],cds['rlat'],color='yellow',s=5, label='Estaciones Hidrologicas')
@@ -75,8 +73,7 @@ plt.legend( loc='upper left',labelcolor='w')
 plt.show()
 plt.clf()
 #%%
-#In case the precipitation is not in mm/d
-#pr_RCM=data['pr']*86400
+
 date_range=data['time'].to_index()
 df=pd.DataFrame(index=date_range)
 df1=pd.DataFrame(index=date_range)
@@ -91,7 +88,7 @@ for i in range(len(cds)):
     df[name]=da2['pr']*86400  #In case the precipitation is NOT in mm/d
     print('Process finished for: ' +str(i)+'_'+ str(name))
 
-df.to_csv(str(RCM_name)+'_estaciones'+'.csv',encoding = 'utf-8-sig')    
+df.to_excel(str(RCM_name)+'_estaciones'+'.xlsx',encoding = 'utf-8-sig')    
 print('Process finished for RCM Model: '+RCM_name)
 
 
